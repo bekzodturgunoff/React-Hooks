@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useMemo} from "react";
 
 export default function UseMemo() {
   const [data, setData] = useState()
   const [toggle, setToggle] = useState(false)
-
   useEffect(()=>{
     fetch("https://jsonplaceholder.typicode.com/comments")
     .then((response) => response.json())
@@ -23,12 +22,24 @@ export default function UseMemo() {
     return longestName
   }
 
+  const getLongestName = useMemo(()=> findLongestName(data), [data])
+
+
   function make(){
     setToggle(prev=>!prev)
   }
 
-  return <div>{findLongestName(data)} 
+  return (
+  <div>
+<h1>Use Memo Hook</h1>
+  <div>{getLongestName} 
+  <div>
   <button onClick={make}>Toggle</button>
   {toggle && <h1>Toggle</h1>}
-  </div>;
+  </div>
+  <h1>_________________</h1>
+  </div>
+  </div>
+  
+  )
 }
