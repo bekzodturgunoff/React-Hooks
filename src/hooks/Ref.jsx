@@ -5,8 +5,9 @@ export default function Ref() {
   const inputRef = useRef(null);
   const onClick = () => {
     inputRef.current.focus();
-    console.log(inputRef.current.value);
+    // console.log(inputRef.current.value);
     setName(inputRef.current.value);
+    inputRef.current.value = "";
   };
   return (
     <div>
