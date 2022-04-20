@@ -18,6 +18,7 @@ export default function Reducer() {
 
   return (
     <div>
+      <h1>Use Reducer Hook</h1>
       <h1>{state.count}</h1>
       <button
         onClick={() => {
@@ -36,6 +37,7 @@ export default function Reducer() {
         MINUS
       </button>
       {state.showText && <p>This is a text</p>}
+      <h1>_________________</h1>
     </div>
   );
 }

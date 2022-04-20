@@ -10,10 +10,12 @@ export default function Ref() {
   };
   return (
     <div>
+      <h1>Use Ref Hook </h1>
       <h1>{name}</h1>
 
       <input type="text" placeholder="useRef Focus" ref={inputRef} />
       <button onClick={onClick}>Focus</button>
+      <h1>_________________</h1>
     </div>
   );
 }
